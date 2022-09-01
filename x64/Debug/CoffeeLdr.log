@@ -1,0 +1,12 @@
+﻿  CoffeeLdr.c
+C:\PENTEST\Tools\CoffeeLdr\Source\CoffeeLdr.c(94,35): warning C4244: 'function': conversion from 'SIZE_T' to 'ULONG', possible loss of data
+C:\PENTEST\Tools\CoffeeLdr\Source\CoffeeLdr.c(154,124): warning C4047: '=': 'PCOFF_SECTION' differs in levels of indirection from 'UINT_PTR'
+C:\PENTEST\Tools\CoffeeLdr\Source\CoffeeLdr.c(155,88): warning C4047: '=': 'PCOFF_RELOC' differs in levels of indirection from 'UINT_PTR'
+C:\PENTEST\Tools\CoffeeLdr\Source\CoffeeLdr.c(161,26): warning C4312: 'type cast': conversion from 'UINT32' to 'PVOID' of greater size
+C:\PENTEST\Tools\CoffeeLdr\Source\CoffeeLdr.c(161,101): warning C4047: '=': 'UINT32' differs in levels of indirection from 'PVOID'
+C:\PENTEST\Tools\CoffeeLdr\Source\CoffeeLdr.c(236,74): warning C4047: '=': 'PCOFF_RELOC' differs in levels of indirection from 'UINT_PTR'
+C:\PENTEST\Tools\CoffeeLdr\Source\CoffeeLdr.c(262,132): warning C4047: '=': 'PCOFF_SECTION' differs in levels of indirection from 'UINT_PTR'
+C:\PENTEST\Tools\CoffeeLdr\Source\CoffeeLdr.c(266,66): warning C4022: 'memcpy': pointer mismatch for actual parameter 2
+C:\PENTEST\Tools\CoffeeLdr\Source\CoffeeLdr.c(270,79): warning C4047: '=': 'PCOFF_SYMBOL' differs in levels of indirection from 'UINT_PTR'
+C:\PENTEST\Tools\CoffeeLdr\Source\CoffeeLdr.c(140): warning C4715: 'CoffeeCleanup': not all control paths return a value
+  CoffeeLdr.vcxproj -> C:\PENTEST\Tools\CoffeeLdr\x64\Debug\CoffeeLdr.exe

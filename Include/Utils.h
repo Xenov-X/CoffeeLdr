@@ -6,3 +6,4 @@
 
 LPVOID  LoadFileIntoMemory( LPSTR Path, PDWORD MemorySize );
 DWORD   HashString( PVOID String, SIZE_T Length );
+unsigned char* unhexlify(unsigned char* value, int* outlen);

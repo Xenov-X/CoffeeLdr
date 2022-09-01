@@ -1,5 +1,4 @@
-
-#include <BeaconApi.h>
+#include "..\Include\BeaconApi.h"
 #include <stdio.h>
 
 COFFAPIFUNC BeaconApi[] = {

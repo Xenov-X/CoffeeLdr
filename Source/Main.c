@@ -1,6 +1,6 @@
-#include <CoffeLdr.h>
-#include <BeaconApi.h>
-#include <Utils.h>
+#include "..\Include\CoffeLdr.h"
+#include "..\Include\BeaconApi.h"
+#include "..\Include\Utils.h"
 
 int main( int argc, char* argv[] )
 {
@@ -10,6 +10,8 @@ int main( int argc, char* argv[] )
     SIZE_T Size   = 0;
     PVOID  Memory = NULL;
     PCHAR  Output = NULL;
+    unsigned char* arguments = NULL;
+    int argumentSize = 0;
 
     puts( "[*] CoffeeLdr: Beacon Object loader by @C5pider" );
 
@@ -34,7 +36,12 @@ int main( int argc, char* argv[] )
         return 0;
     }
 
-    Status = CoffeeLdr( Entry, Memory, NULL, 0 );
+    if (argc == 4) {
+        arguments = unhexlify((unsigned char*)argv[3], &argumentSize);
+    }
+
+
+    Status = CoffeeLdr( Entry, Memory, arguments, argumentSize );
 
     Output = BeaconGetOutputData( NULL );
     if ( Output != NULL)

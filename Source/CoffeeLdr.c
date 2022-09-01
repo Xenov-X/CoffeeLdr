@@ -1,7 +1,8 @@
 
-#include <CoffeLdr.h>
-#include <BeaconApi.h>
-#include <Utils.h>
+#include "..\Include\CoffeLdr.h"
+#include "..\Include\BeaconApi.h"
+#include "..\Include\Utils.h"
+
 
 #if defined( __x86_64__ ) || defined( _WIN64 )
 
@@ -45,7 +46,8 @@ PVOID CoffeeProcessSymbol( LPSTR Symbol )
     else if ( HashString( Symbol, COFF_PREP_SYMBOL_SIZE ) == COFF_PREP_SYMBOL )
     {
         SymLibrary  = Bak + COFF_PREP_SYMBOL_SIZE;
-        SymLibrary  = strtok( SymLibrary, "$" );
+        char* next = NULL;
+        SymLibrary  = strtok_s( SymLibrary, "$", &next);
         SymFunction = SymLibrary + strlen( SymLibrary ) + 1;
 
         hLibrary = LoadLibraryA( SymLibrary );

@@ -1,4 +1,4 @@
-#include <Utils.h>
+#include "..\Include\Utils.h"
 
 LPVOID LoadFileIntoMemory( LPSTR Path, PDWORD MemorySize )
 {
@@ -48,4 +48,37 @@ DWORD HashString( PVOID String, SIZE_T Length )
     } while ( TRUE );
 
     return Hash;
+}
+
+unsigned char* unhexlify(unsigned char* value, int* outlen) {
+    unsigned char* retval = NULL;
+    char byteval[3] = { 0 };
+    int counter = 0;
+    int counter2 = 0;
+    char character = 0;
+    if (value == NULL) {
+        return NULL;
+    }
+    //DEBUG_PRINT("Unhexlify Strlen: %lu\n", (long unsigned int)strlen((char*)value));
+    if (value == NULL || strlen((char*)value) % 2 != 0) {
+        //DEBUG_PRINT("Either value is NULL, or the hexlified string isn't valid\n");
+        goto errcase;
+    }
+
+    retval = calloc(strlen((char*)value) + 1, 1);
+    if (retval == NULL) {
+        goto errcase;
+    }
+
+    counter2 = 0;
+    for (counter = 0; counter < strlen((char*)value); counter += 2) {
+        memcpy(byteval, value + counter, 2);
+        character = strtol(byteval, NULL, 16);
+        memcpy(retval + counter2, &character, 1);
+        counter2++;
+    }
+    *outlen = counter2;
+
+errcase:
+    return retval;
 }
